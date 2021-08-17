@@ -23,6 +23,6 @@ public class GenericsMaximum {
         //variables
         int a=1,b=2,c=3;
         // max of numbers given
-        System.out.println("Max of Numbers 1, 2, 3 is "+maxOfThree(1,2,3));
+        System.out.println("Max of Numbers 1, 2, 3 is "+maxOfThree(a,b,c));
     }
 }
