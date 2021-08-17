@@ -26,13 +26,27 @@ public class GenericsMaximum {
         }
         return max;
     }
+    // method to find max of three strings
+    static private void maxOfThree(String a,String b, String c){
+        String max=a;
+        if(b.compareTo(max)>0 ){
+            max= b;
+        }
+        if(c.compareTo(max)>0 ){
+            max= c;
+        }
+        System.out.println(max);
+    }
+
     // Generic methods used
     public static void main(String[] args) {
         //welcome message
         System.out.println("Generics");
         //variables
-        float a=1.1f,b=2.2f,c=3.3f;
-        // max of numbers given
-        System.out.println("Max of Numbers 1.1, 2.2, 3.3 is "+maxOfThree(a,b,c));
+        //float a=1.1f,b=2.2f,c=3.3f;
+        String a="Apple",b="Banana",c="Peach";
+        // max of parameter given
+        System.out.println("Max of String: Apple, Banana, Peach is ");
+        maxOfThree(a,b,c);
     }
 }
