@@ -15,14 +15,24 @@ public class GenericsMaximum {
         }
         return max;
     }
-
+    // method takes three Float parameters and returns max of them
+    static private Float maxOfThree(Float a,Float b,Float c){
+        Float max=a;
+        if(b.compareTo(max)>0 ){
+            max= b;
+        }
+        if(c.compareTo(max)>0 ){
+            max= c;
+        }
+        return max;
+    }
     // Generic methods used
     public static void main(String[] args) {
         //welcome message
         System.out.println("Generics");
         //variables
-        int a=1,b=2,c=3;
+        float a=1.1f,b=2.2f,c=3.3f;
         // max of numbers given
-        System.out.println("Max of Numbers 1, 2, 3 is "+maxOfThree(1,2,3));
+        System.out.println("Max of Numbers 1.1, 2.2, 3.3 is "+maxOfThree(a,b,c));
     }
 }
