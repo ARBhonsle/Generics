@@ -7,24 +7,22 @@ import java.awt.*;
  */
 public class GenericsMaximum {
     //variables
-    static int n1 = 1, n2 = 2, n3 = 3;
-    static float num1 = 1.1f, num2 = 2.2f, num3 = 3.3f;
-    static String a = "Apple", b = "Banana", c = "Peach";
+    static Integer[] n1 = {1, 2, 3, 4, 6};
+    static Float[] num1 = {1.1f, 2.2f, 3.3f, 4.4f, 4375f};
+    static String[] a = {"Apple", "Banana", "Peach", "Kiwi", "Grapes"};
 
-    // parameterised constructer to find max of three
-    public <T extends Comparable> GenericsMaximum(T a, T b, T c) {
-        System.out.println("Parameters passed are: " + a + " " + b + " " + c);
-        maxOfThree(a, b, c);
+    // parameterised constructor to find max of values in array
+    public <T extends Comparable> GenericsMaximum(T[] a) {
+        maxOfThree(a);
     }
 
-    // method takes three generic parameters and returns max of them
-    static private <T extends Comparable> void maxOfThree(T a, T b, T c) {
-        T max = a;
-        if (b.compareTo(max) > 0) {
-            max = b;
-        }
-        if (c.compareTo(max) > 0) {
-            max = c;
+    // method takes array of generic parameters and returns max of them
+    static private <T extends Comparable> void maxOfThree(T[] a) {
+        T max = a[0];
+        for (int i = 1; i < a.length; i++) {
+            if (a[i].compareTo(max) > 0) {
+                max = a[i];
+            }
         }
         System.out.println(max);
     }
@@ -32,10 +30,10 @@ public class GenericsMaximum {
     // Generic methods used
     public static void main(String[] args) {
         //welcome message
-        System.out.println("Generics");
+        System.out.println("Generics Concepts");
         // objects of GenericsMaximum class declared and initialised
-        GenericsMaximum obj1 = new GenericsMaximum(n1, n2, n3);
-        obj1 = new GenericsMaximum(num1, num2, num3);
-        obj1 = new GenericsMaximum(a, b, c);
+        GenericsMaximum obj1 = new GenericsMaximum(n1);
+        obj1 = new GenericsMaximum(num1);
+        obj1 = new GenericsMaximum(a);
     }
 }
