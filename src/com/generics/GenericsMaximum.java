@@ -13,18 +13,23 @@ public class GenericsMaximum {
 
     // parameterised constructor to find max of values in array
     public <T extends Comparable> GenericsMaximum(T[] a) {
-        maxOfThree(a);
+        printMax(maxOfThree(a));
     }
 
     // method takes array of generic parameters and returns max of them
-    static private <T extends Comparable> void maxOfThree(T[] a) {
+    static private <T extends Comparable> T maxOfThree(T[] a) {
         T max = a[0];
         for (int i = 1; i < a.length; i++) {
             if (a[i].compareTo(max) > 0) {
                 max = a[i];
             }
         }
-        System.out.println(max);
+        return max;
+    }
+
+    // method prints max to console
+    static <T> void printMax(T max) {
+        System.out.println("Max element: " + max);
     }
 
     // Generic methods used
